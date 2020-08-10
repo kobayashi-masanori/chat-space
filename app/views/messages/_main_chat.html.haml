@@ -1,0 +1,28 @@
+.Main-chat
+  .Main-chat__main-header
+    .Main-chat__main-header__box-1
+      .Main-chat__main-header__box-1__group-name
+        test
+      .Main-chat__margin-header__box-1__group-member
+        Member:masa
+    .Main-chat__main-header__box-2
+      .Main-chat__main-header__box-2__edit
+      = link_to "#" do
+        Edit
+  .Main-chat__main-messages
+    .Main-chat__main-messages__box-1
+      .Main-chat__main-messages__box-1__name
+        masa
+      .Main-chat__main-messages__box-1__date
+        2019/11/20(Wed) 17:43:01
+    .Main-chat__main-messages__box-2
+      .Main-chat__main-messages__box-2__comment
+        おはよう！
+  .Main-chat__main-form
+    %form.message
+      .input-box
+        %input{type: "text",class: "input-box__text",placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          = icon('fas','image')
+          %input{type: "file",class: "input-box__image__file"}
+      %input{type: "submit",class: "input-box__submit",value: "SEND"}
