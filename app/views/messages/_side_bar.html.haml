@@ -2,7 +2,7 @@
   .Chat-side__side-header
     .Chat-side__side-header__box
       .Chat-side__side-header__box__user-name
-        = current_user.name 
+        =current_user.name  
       .Chat-side__side-header__box__icon
         =link_to new_group_path do
           =icon('far', 'edit',class: 'Chat-side__side-header__box__icon__strong-1') 
@@ -11,8 +11,8 @@
   .Chat-side__side-group
     - current_user.groups.each do |group|
       .Chat-side__side-group__box
-        = link_to '#' do
+        = link_to group_messages_path(group) do
           .Chat-side__side-group__box__group-name
             = group.name
           .Chat-side__side-group__box__group-messages
-            まだメッセージがありません
+            = group.show_last_message
